@@ -1,0 +1,6 @@
+framework module PcycleSDK {
+  umbrella header "PcycleSDK.h"
+
+  export *
+  module * { export * }
+}

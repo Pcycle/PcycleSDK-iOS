@@ -1,0 +1,366 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		74A1EC081A80C9B300F2AA87 /* MyAggregate */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 74A1EC091A80C9B300F2AA87 /* Build configuration list for PBXAggregateTarget "MyAggregate" */;
+			buildPhases = (
+				74A1EC0C1A80C9C700F2AA87 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = MyAggregate;
+			productName = MyAggregate;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		7436BC8A1A4EB060008F6DB9 /* PcycleSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 7436BC891A4EB060008F6DB9 /* PcycleSDK.m */; };
+		745D13441A5A603B00BCF8D9 /* PcycleBluetooth.h in Headers */ = {isa = PBXBuildFile; fileRef = 745D13421A5A603B00BCF8D9 /* PcycleBluetooth.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		745D13451A5A603B00BCF8D9 /* PcycleBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D13431A5A603B00BCF8D9 /* PcycleBluetooth.m */; };
+		7465FB171A42BF6900F13EE5 /* PcycleSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 7465FB161A42BF6900F13EE5 /* PcycleSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74892B391A51BA8B00442CA2 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74892B381A51BA8B00442CA2 /* CoreBluetooth.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7436BC891A4EB060008F6DB9 /* PcycleSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PcycleSDK.m; sourceTree = "<group>"; };
+		745D13421A5A603B00BCF8D9 /* PcycleBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PcycleBluetooth.h; sourceTree = "<group>"; };
+		745D13431A5A603B00BCF8D9 /* PcycleBluetooth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PcycleBluetooth.m; sourceTree = "<group>"; };
+		7465FB111A42BF6900F13EE5 /* PcycleSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PcycleSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7465FB151A42BF6900F13EE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7465FB161A42BF6900F13EE5 /* PcycleSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PcycleSDK.h; sourceTree = "<group>"; };
+		74892B381A51BA8B00442CA2 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7465FB0D1A42BF6800F13EE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74892B391A51BA8B00442CA2 /* CoreBluetooth.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7465FB071A42BF6700F13EE5 = {
+			isa = PBXGroup;
+			children = (
+				7465FB131A42BF6900F13EE5 /* PcycleSDK */,
+				7465FB121A42BF6900F13EE5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7465FB121A42BF6900F13EE5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7465FB111A42BF6900F13EE5 /* PcycleSDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7465FB131A42BF6900F13EE5 /* PcycleSDK */ = {
+			isa = PBXGroup;
+			children = (
+				7465FB161A42BF6900F13EE5 /* PcycleSDK.h */,
+				7436BC891A4EB060008F6DB9 /* PcycleSDK.m */,
+				745D13421A5A603B00BCF8D9 /* PcycleBluetooth.h */,
+				745D13431A5A603B00BCF8D9 /* PcycleBluetooth.m */,
+				74892B381A51BA8B00442CA2 /* CoreBluetooth.framework */,
+				7465FB141A42BF6900F13EE5 /* Supporting Files */,
+			);
+			path = PcycleSDK;
+			sourceTree = "<group>";
+		};
+		7465FB141A42BF6900F13EE5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7465FB151A42BF6900F13EE5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7465FB0E1A42BF6800F13EE5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7465FB171A42BF6900F13EE5 /* PcycleSDK.h in Headers */,
+				745D13441A5A603B00BCF8D9 /* PcycleBluetooth.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7465FB101A42BF6800F13EE5 /* PcycleSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7465FB271A42BF6A00F13EE5 /* Build configuration list for PBXNativeTarget "PcycleSDK" */;
+			buildPhases = (
+				7465FB0C1A42BF6800F13EE5 /* Sources */,
+				7465FB0D1A42BF6800F13EE5 /* Frameworks */,
+				7465FB0E1A42BF6800F13EE5 /* Headers */,
+				7465FB0F1A42BF6800F13EE5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PcycleSDK;
+			productName = PcycleSDK;
+			productReference = 7465FB111A42BF6900F13EE5 /* PcycleSDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7465FB081A42BF6700F13EE5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = FlyingFrog;
+				TargetAttributes = {
+					7465FB101A42BF6800F13EE5 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					74A1EC081A80C9B300F2AA87 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 7465FB0B1A42BF6800F13EE5 /* Build configuration list for PBXProject "PcycleSDK" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7465FB071A42BF6700F13EE5;
+			productRefGroup = 7465FB121A42BF6900F13EE5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7465FB101A42BF6800F13EE5 /* PcycleSDK */,
+				74A1EC081A80C9B300F2AA87 /* MyAggregate */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7465FB0F1A42BF6800F13EE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		74A1EC0C1A80C9C700F2AA87 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Sets the target folders and the final framework product.\n# 如果工程名称和Framework的Target名称不一样的话，要自定义FMKNAME\n# 例如: FMK_NAME = \"MyFramework\"\nFMK_NAME=${PROJECT_NAME}\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nINSTALL_DIR=${SRCROOT}/Products/${FMK_NAME}.framework\n# Working dir will be deleted after the framework creation.\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\n# -configuration ${CONFIGURATION}\n# Clean and Building both architectures.\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphoneos clean build\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphonesimulator clean build\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\nmkdir -p \"${INSTALL_DIR}\"\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/${FMK_NAME}\"\nrm -r \"${WRK_DIR}\"\nopen \"${INSTALL_DIR}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7465FB0C1A42BF6800F13EE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				745D13451A5A603B00BCF8D9 /* PcycleBluetooth.m in Sources */,
+				7436BC8A1A4EB060008F6DB9 /* PcycleSDK.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7465FB251A42BF6A00F13EE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7465FB261A42BF6A00F13EE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7465FB281A42BF6A00F13EE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PcycleSDK/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				MACH_O_TYPE = staticlib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7465FB291A42BF6A00F13EE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PcycleSDK/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				MACH_O_TYPE = staticlib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		74A1EC0A1A80C9B300F2AA87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		74A1EC0B1A80C9B300F2AA87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7465FB0B1A42BF6800F13EE5 /* Build configuration list for PBXProject "PcycleSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7465FB251A42BF6A00F13EE5 /* Debug */,
+				7465FB261A42BF6A00F13EE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7465FB271A42BF6A00F13EE5 /* Build configuration list for PBXNativeTarget "PcycleSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7465FB281A42BF6A00F13EE5 /* Debug */,
+				7465FB291A42BF6A00F13EE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74A1EC091A80C9B300F2AA87 /* Build configuration list for PBXAggregateTarget "MyAggregate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74A1EC0A1A80C9B300F2AA87 /* Debug */,
+				74A1EC0B1A80C9B300F2AA87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7465FB081A42BF6700F13EE5 /* Project object */;
+}
