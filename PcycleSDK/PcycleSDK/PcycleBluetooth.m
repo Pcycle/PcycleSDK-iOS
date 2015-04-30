@@ -464,6 +464,11 @@
         {
             NSString *message = [NSString stringWithFormat:@"DisconnectedPeripheral~%@", foundPeripheral];
             NSLog(@"%@", message);
+            
+            if (_pcycleBluetoothDelegate != nil)
+            {
+                [_pcycleBluetoothDelegate pcycleBluetooth:self didDisconnectPcycleDevice:peripheral error:error];
+            }
         }
     }
 }
@@ -626,7 +631,7 @@
         }
     }
     
-    //NSLog(@"PcycleBluetooth : Update Value %@", message);
+    NSLog(@"PcycleBluetooth : Update Value %@", message);
 
     [_pcycleBluetoothDelegate pcycleBluetooth:self dataFromPeripheral:peripheral data:characteristic.value error:error];
 

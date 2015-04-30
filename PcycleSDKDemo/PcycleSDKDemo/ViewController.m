@@ -26,14 +26,14 @@ NSTimer *timer;
     
     [self.scanBtn setTitle:@"开始扫描" forState:UIControlStateNormal];
     [self.connectBtn setTitle:@"连接" forState:UIControlStateNormal];
-    [self.conReqBtn setTitle:@"0.1s请求" forState:UIControlStateNormal];
+    [self.conReqBtn setTitle:@"0.2s请求" forState:UIControlStateNormal];
     [self.connectBtn setHidden:YES];
     [self.opView setHidden:YES];
     
     self.nameLbl.text = @"";
     self.uuidLbl.text = @"";
     self.rssiLbl.text = @"";
-    
+    self.stepFreqLbl.text = @"";
 
 }
 
@@ -72,6 +72,18 @@ NSTimer *timer;
         [_pcycleSDK disconnectPcycleDevice:self.uuidLbl.text];
         [self.connectBtn setTitle:@"连接" forState:UIControlStateNormal];
         [self.opView setHidden:YES];
+        
+        
+        [self.conReqBtn setTitle:@"0.2s请求" forState:UIControlStateNormal];
+        
+        self.nameLbl.text = @"";
+        self.uuidLbl.text = @"";
+        self.rssiLbl.text = @"";
+        self.stepFreqLbl.text = @"";
+        self.btnStateLbl.text = @"";
+        self.rollStateLbl.text = @"";
+        
+        [timer invalidate];
     }
 }
 
@@ -85,6 +97,11 @@ NSTimer *timer;
     [_pcycleSDK requestCurrentVelocity];
 }
 
+- (IBAction)reqStepFreqBtnTouchUpInside:(id)sender
+{
+    [_pcycleSDK requestStepFreq];
+}
+
 - (IBAction)setRBtnTouchUpInside:(id)sender
 {
     [_pcycleSDK setResistance:[self.reText.text floatValue]];
@@ -93,9 +110,9 @@ NSTimer *timer;
 - (IBAction)conReqBtnTouchUpInside:(id)sender
 {
     
-    if ([self.conReqBtn.titleLabel.text isEqual:@"0.1s请求"])
+    if ([self.conReqBtn.titleLabel.text isEqual:@"0.2s请求"])
     {
-        timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(conVelocityReq) userInfo:nil repeats:YES];
+        timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(conReq) userInfo:nil repeats:YES];
         
         [self.conReqBtn setTitle:@"停止" forState:UIControlStateNormal];
         
@@ -104,11 +121,21 @@ NSTimer *timer;
     else
     {
         [timer invalidate];
-        [self.conReqBtn setTitle:@"0.1s请求" forState:UIControlStateNormal];
+        [self.conReqBtn setTitle:@"0.2s请求" forState:UIControlStateNormal];
         [self.reqVelocityBtn setEnabled:YES];
     }
 }
 
+- (void)conReq
+{
+#if 1
+        [self conVelocityReq];
+        [_pcycleSDK requestStepFreq];
+    
+#else
+    [self conVelocityReq];
+#endif
+}
 
 #pragma mark - PcycleSDKDelegate
 
@@ -147,6 +174,25 @@ NSTimer *timer;
     [alert show];
 }
 
+- (void)pcycleSDK:(PcycleSDK *)pcycleSDK didDisconnectToPcycleDevice:(NSString *)name UUID:(NSString *)uuid error:(NSError *)error
+{
+    UIAlertView *alert;
+    NSString *message;
+    
+    if (error != nil)
+    {
+        message = [NSString stringWithFormat:@"Error : %@", error.description];
+    }
+    else
+    {
+        message = [NSString stringWithFormat:@" disconnect to %@", uuid];
+    }
+    
+    alert = [[UIAlertView alloc] initWithTitle:nil message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    [alert show];
+}
+
 -(void) pcycleSDK:(PcycleSDK *)pcycleSDK currentVelocity:(float)metersPerSecond error:(NSError *)error
 {
     if (error == nil)
@@ -161,6 +207,19 @@ NSTimer *timer;
 
 -(void) pcycleSDK:(PcycleSDK *)pcycleSDK didSetResistance:(float)newton error:(NSError *)error
 {
+    
+}
+
+- (void)pcycleSDK:(PcycleSDK *)pcycleSDK didRequestStepFreq:(float)cirlesPerMinute error:(NSError *)error
+{
+    if (error == nil)
+    {
+        int x = (int)cirlesPerMinute;
+        float n = (cirlesPerMinute - x) * 10;
+        int m = (int)n;
+        
+        self.stepFreqLbl.text = [NSString stringWithFormat:@"%d.%d c/m", x, m];
+    }
     
 }
 
@@ -210,6 +269,7 @@ NSTimer *timer;
 {
     self.btnStateLbl.text = [NSString stringWithFormat:@"Button %@", buttonIndex];
 }
+
 
 @end
 

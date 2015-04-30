@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -149,6 +149,24 @@
                                             <action selector="conReqBtnTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gar-OT-66L"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdo-sb-OT5">
+                                        <rect key="frame" x="414" y="117" width="107" height="47"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="获取步频">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="reqStepFreqBtnTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OKB-kj-po9"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEh-Rs-dgz">
+                                        <rect key="frame" x="574" y="117" width="85" height="47"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -169,6 +187,7 @@
                         <outlet property="rssiLbl" destination="Jbq-Rn-zdw" id="QHO-6n-mVh"/>
                         <outlet property="scanBtn" destination="tOf-Fz-Tsn" id="s09-IA-LOg"/>
                         <outlet property="setRBtn" destination="tMO-LA-Bi0" id="RUK-ic-2Z4"/>
+                        <outlet property="stepFreqLbl" destination="HEh-Rs-dgz" id="pFx-IF-tcX"/>
                         <outlet property="uuidLbl" destination="Z5M-VS-nrn" id="dsW-mb-Fk7"/>
                         <outlet property="velocityLbl" destination="QOH-Ev-pDb" id="LEJ-9k-9DS"/>
                     </connections>

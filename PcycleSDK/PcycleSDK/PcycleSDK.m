@@ -86,15 +86,29 @@
     [_pcycleBluetooth writeCharacteristic:_currentConnectDeviceUUID service:@"FFE0" characteristic:@"FFE1" data:[NSData dataWithBytes:data length:20] withResponse:YES];
 }
 
+- (void)requestStepFreq
+{
+    unsigned char data[20] = {0xAA, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xAA};
+    
+    [_pcycleBluetooth writeCharacteristic:_currentConnectDeviceUUID service:@"FFE0" characteristic:@"FFE1" data:[NSData dataWithBytes:data length:20] withResponse:YES];
+}
+
+- (void)requestFirmwareVer
+{
+    unsigned char data[20] = {0xA8, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xA8};
+    
+    [_pcycleBluetooth writeCharacteristic:_currentConnectDeviceUUID service:@"FFE0" characteristic:@"FFE1" data:[NSData dataWithBytes:data length:20] withResponse:YES];
+}
+
 -(void) setResistance:(float) newton
 {
     unsigned char data[20] = {0xA6, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0};
     
     _operationFlag = 0xA6;
     
-    if (newton > 999.9f)
+    if (newton > 100.0f)
     {
-        newton = 999.9f;
+        newton = 100.0f;
     }
     
     if (newton < 0)
@@ -207,6 +221,19 @@
     }
 }
 
+- (void)pcycleBluetooth:(PcycleBluetooth *)pcycleBluetooth didDisconnectPcycleDevice:(CBPeripheral *)peripheral error:(NSError *)error
+{
+    if (error != nil)
+    {
+        [_pcycleSDKDelegate pcycleSDK:self didDisconnectToPcycleDevice:nil UUID:nil error:error];
+    }
+    else
+    {
+        _currentConnectDeviceUUID = [_pcycleBluetooth findPeripheralName:peripheral];
+        [_pcycleSDKDelegate pcycleSDK:self didDisconnectToPcycleDevice:peripheral.name UUID:_currentConnectDeviceUUID error:error];
+    }
+}
+
 -(void) pcycleBluetooth:(PcycleBluetooth *) pcycleBluetooth dataFromPeripheral:(CBPeripheral *)peripheral data:(NSData *)data error:(NSError *)error
 {
     
@@ -214,6 +241,8 @@
     NSNumber *buttonIndex;
     PcycleRollStickAction action;
     float resistance = 0;
+    float stepFreq = 0;
+    int ver = 0;
     
     //NSString *message = [NSString stringWithFormat:@"Error~%@", error.description];
     
@@ -221,10 +250,17 @@
     
     if (data == nil)
     {
+        if (error != nil)
+        {
+            [_pcycleSDKDelegate pcycleSDK:self recieveError:error];
+        }
+        
         return;
     }
     
     const unsigned char *valueStr = (const unsigned char *)data.bytes;
+    
+    NSLog(@"data = %2x", valueStr[0]);
     
     switch (valueStr[0]) {
             
@@ -242,6 +278,21 @@
             resistance = valueStr[1] * 256 + (valueStr[2] >> 4) * 16 + (valueStr[2] & 0x0F) + (float)valueStr[3] * 0.1;
             [_pcycleSDKDelegate pcycleSDK:self didSetResistance:resistance error:error];
             
+            break;
+        
+        //请求版本
+        case 0xA8:
+            
+            ver = valueStr[1] * 16 + valueStr[2];
+            [_pcycleSDKDelegate pcycleSDK:self didRequestFirmwareVer:ver error:error];
+            
+            break;
+            
+        //步频
+        case 0xAA:
+            
+            stepFreq = valueStr[1] * 256 + (valueStr[2] >> 4) * 16 + (valueStr[2] & 0x0F) + (float)valueStr[3] * 0.1;
+            [_pcycleSDKDelegate pcycleSDK:self didRequestStepFreq:stepFreq error:error];
             break;
             
         //按钮
@@ -262,9 +313,7 @@
         case 0xA7:
             
             break;
-        case 0xA8:
-            
-            break;
+
         case 0xA9:
             
             break;

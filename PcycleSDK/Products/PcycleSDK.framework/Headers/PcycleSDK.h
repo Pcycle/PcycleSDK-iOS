@@ -84,6 +84,12 @@ typedef NS_ENUM(NSInteger, PcycleRollStickAction) {
  */
 -(void) requestCurrentVelocity;
 
+
+/**
+ *  请求步频
+ */
+- (void)requestStepFreq;
+
 /**
  *  设置阻力
  *
@@ -91,14 +97,12 @@ typedef NS_ENUM(NSInteger, PcycleRollStickAction) {
  */
 -(void) setResistance:(float) newton;
 
-#if 0
 /**
- *  获取固件版本
+ *  请求固件版本
  *
  *  @return 字符串形式的固件版本信息
  */
--(NSString*) getFirmwareVersion;
-#endif
+-(void) requestFirmwareVer;
 
 @end
 
@@ -109,15 +113,23 @@ typedef NS_ENUM(NSInteger, PcycleRollStickAction) {
 
 -(void) pcycleSDK:(PcycleSDK *) pcycleSDK currentVelocity:(float) metersPerSecond error:(NSError *) error;
 
+-(void) pcycleSDK:(PcycleSDK *) pcycleSDK didRequestStepFreq:(float) cirlesPerMinute error:(NSError *) error;
+
 -(void) pcycleSDK:(PcycleSDK *) pcycleSDK discoverPcycleDevice:(NSString *)name UUID:(NSString *)uuid RSSI:(NSNumber *)RSSI;
 
 -(void) pcycleSDK:(PcycleSDK *) pcycleSDK didConnectToPcycleDevice:(NSString *)name UUID:(NSString *)uuid error:(NSError *) error;
 
+-(void) pcycleSDK:(PcycleSDK *) pcycleSDK didDisconnectToPcycleDevice:(NSString *)name UUID:(NSString *)uuid error:(NSError *) error;
+
 -(void) pcycleSDK:(PcycleSDK *) pcycleSDK didSetResistance:(float) newton error:(NSError *) error;
+
+-(void) pcycleSDK:(PcycleSDK *) pcycleSDK didRequestFirmwareVer:(int) version error:(NSError *) error;
 
 -(void) pcycleSDK:(PcycleSDK *) pcycleSDK buttonPressed:(NSNumber *) buttonIndex error:(NSError *) error;
 
 -(void) pcycleSDK:(PcycleSDK *) pcycleSDK rollStickRolled:(PcycleRollStickAction) action error:(NSError *) error;
+
+-(void) pcycleSDK:(PcycleSDK *) pcycleSDK recieveError:(NSError *)error;
 
 @end
 

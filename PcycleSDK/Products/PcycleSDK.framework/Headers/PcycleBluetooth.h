@@ -79,6 +79,8 @@
 -(void) pcycleBluetooth:(PcycleBluetooth *) pcycleBluetooth didConnectPcycleDevice:(CBPeripheral *)peripheral error:(NSError *)error;
 
 
+-(void) pcycleBluetooth:(PcycleBluetooth *) pcycleBluetooth didDisconnectPcycleDevice:(CBPeripheral *)peripheral error:(NSError *)error;
+
 
 @end
 

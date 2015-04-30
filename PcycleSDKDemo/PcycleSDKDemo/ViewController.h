@@ -19,6 +19,7 @@
 @property (nonatomic, retain) IBOutlet UILabel      *nameLbl;
 @property (nonatomic, retain) IBOutlet UILabel      *uuidLbl;
 @property (nonatomic, retain) IBOutlet UILabel      *rssiLbl;
+@property (nonatomic, retain) IBOutlet UILabel      *stepFreqLbl;
 
 @property (nonatomic, retain) IBOutlet UIView       *opView;
 @property (nonatomic, retain) IBOutlet UIButton     *reqVelocityBtn;

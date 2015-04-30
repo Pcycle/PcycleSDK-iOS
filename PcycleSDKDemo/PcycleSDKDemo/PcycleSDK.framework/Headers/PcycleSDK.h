@@ -84,6 +84,12 @@ typedef NS_ENUM(NSInteger, PcycleRollStickAction) {
  */
 -(void) requestCurrentVelocity;
 
+
+/**
+ *  请求步频
+ */
+- (void)requestStepFreq;
+
 /**
  *  设置阻力
  *
@@ -109,9 +115,13 @@ typedef NS_ENUM(NSInteger, PcycleRollStickAction) {
 
 -(void) pcycleSDK:(PcycleSDK *) pcycleSDK currentVelocity:(float) metersPerSecond error:(NSError *) error;
 
+-(void) pcycleSDK:(PcycleSDK *) pcycleSDK didRequestStepFreq:(float) cirlesPerMinute error:(NSError *) error;
+
 -(void) pcycleSDK:(PcycleSDK *) pcycleSDK discoverPcycleDevice:(NSString *)name UUID:(NSString *)uuid RSSI:(NSNumber *)RSSI;
 
 -(void) pcycleSDK:(PcycleSDK *) pcycleSDK didConnectToPcycleDevice:(NSString *)name UUID:(NSString *)uuid error:(NSError *) error;
+
+-(void) pcycleSDK:(PcycleSDK *) pcycleSDK didDisconnectToPcycleDevice:(NSString *)name UUID:(NSString *)uuid error:(NSError *) error;
 
 -(void) pcycleSDK:(PcycleSDK *) pcycleSDK didSetResistance:(float) newton error:(NSError *) error;
 
