@@ -13,6 +13,11 @@
 @end
 
 NSTimer *timer;
+NSTimer *reTimer;
+
+int count = 0;
+
+int circle[] = {0, 20, 40, 60, 80, 60, 40, 20};
 
 @implementation ViewController
 
@@ -27,6 +32,7 @@ NSTimer *timer;
     [self.scanBtn setTitle:@"开始扫描" forState:UIControlStateNormal];
     [self.connectBtn setTitle:@"连接" forState:UIControlStateNormal];
     [self.conReqBtn setTitle:@"0.2s请求" forState:UIControlStateNormal];
+    [self.setRBtn setTitle:@"2s连续" forState:UIControlStateNormal];
     [self.connectBtn setHidden:YES];
     [self.opView setHidden:YES];
     
@@ -40,6 +46,20 @@ NSTimer *timer;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)updateValue:(id)sender
+{
+    float f = _slider.value;
+    
+    _reLbl.text = [NSString stringWithFormat:@"%.1f", f];
+}
+
+- (IBAction)editingDidEnd:(id)sender
+{
+    float f = _slider.value;
+    
+    [_pcycleSDK setResistance:f];
 }
 
 - (IBAction)scanBtnTouchUpInside:(id)sender
@@ -75,6 +95,7 @@ NSTimer *timer;
         
         
         [self.conReqBtn setTitle:@"0.2s请求" forState:UIControlStateNormal];
+        [self.setRBtn setTitle:@"2s连续" forState:UIControlStateNormal];
         
         self.nameLbl.text = @"";
         self.uuidLbl.text = @"";
@@ -84,6 +105,7 @@ NSTimer *timer;
         self.rollStateLbl.text = @"";
         
         [timer invalidate];
+        [reTimer invalidate];
     }
 }
 
@@ -104,7 +126,20 @@ NSTimer *timer;
 
 - (IBAction)setRBtnTouchUpInside:(id)sender
 {
-    [_pcycleSDK setResistance:[self.reText.text floatValue]];
+    if ([self.setRBtn.titleLabel.text isEqual:@"2s连续"])
+    {
+        reTimer = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(conSetR) userInfo:nil repeats:YES];
+        
+        [self.setRBtn setTitle:@"停止" forState:UIControlStateNormal];
+        
+  
+    }
+    else
+    {
+        [reTimer invalidate];
+        [self.setRBtn setTitle:@"2s连续" forState:UIControlStateNormal];
+
+    }
 }
 
 - (IBAction)conReqBtnTouchUpInside:(id)sender
@@ -124,6 +159,16 @@ NSTimer *timer;
         [self.conReqBtn setTitle:@"0.2s请求" forState:UIControlStateNormal];
         [self.reqVelocityBtn setEnabled:YES];
     }
+}
+
+- (void)conSetR
+{
+    if (count > 7)
+    {
+        count = 0;
+    }
+    
+    [_pcycleSDK setResistance:circle[count++]];
 }
 
 - (void)conReq

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C4D011CB-68F1-4DE2-A0E4-A8669B09D991</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>AE46CF641675CE052E4F8DAAFFF66F92AF315396</key>
+		<string>https://github.com/Pcycle/PcycleSDK-iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PcycleSDK/PcycleSDK.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>AE46CF641675CE052E4F8DAAFFF66F92AF315396</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Pcycle/PcycleSDK-iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>AE46CF641675CE052E4F8DAAFFF66F92AF315396</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AE46CF641675CE052E4F8DAAFFF66F92AF315396</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PcycleSDK-iOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -30,5 +30,8 @@
 @property (nonatomic, retain) IBOutlet UITextField  *reText;
 @property (nonatomic, retain) IBOutlet UIButton     *conReqBtn;
 
+@property (nonatomic, retain) IBOutlet UISlider     *slider;
+@property (nonatomic, retain) IBOutlet UILabel      *reLbl;
+
 @end
 
