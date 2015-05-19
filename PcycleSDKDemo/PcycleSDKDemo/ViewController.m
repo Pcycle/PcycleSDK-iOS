@@ -25,8 +25,7 @@ int circle[] = {0, 20, 40, 60, 80, 60, 40, 20};
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    _pcycleSDK = [[PcycleSDK alloc] init];
-    [_pcycleSDK initWithDelegate:self];
+    _pcycleSDK = [[PcycleSDK alloc] initWithDelegate:self];
     
     
     [self.scanBtn setTitle:@"开始扫描" forState:UIControlStateNormal];

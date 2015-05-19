@@ -52,7 +52,7 @@ typedef NS_ENUM(NSInteger, PcycleRollStickAction) {
 /**
  *  进行初始化
  */
--(void) initWithDelegate:(id<PcycleSDKDelegate>) delegate;
+-(instancetype) initWithDelegate:(id<PcycleSDKDelegate>) delegate;
 
 
 /**
@@ -97,14 +97,12 @@ typedef NS_ENUM(NSInteger, PcycleRollStickAction) {
  */
 -(void) setResistance:(float) newton;
 
-#if 0
 /**
- *  获取固件版本
+ *  请求固件版本
  *
  *  @return 字符串形式的固件版本信息
  */
--(NSString*) getFirmwareVersion;
-#endif
+-(void) requestFirmwareVer;
 
 @end
 
@@ -125,9 +123,13 @@ typedef NS_ENUM(NSInteger, PcycleRollStickAction) {
 
 -(void) pcycleSDK:(PcycleSDK *) pcycleSDK didSetResistance:(float) newton error:(NSError *) error;
 
+-(void) pcycleSDK:(PcycleSDK *) pcycleSDK didRequestFirmwareVer:(int) version error:(NSError *) error;
+
 -(void) pcycleSDK:(PcycleSDK *) pcycleSDK buttonPressed:(NSNumber *) buttonIndex error:(NSError *) error;
 
 -(void) pcycleSDK:(PcycleSDK *) pcycleSDK rollStickRolled:(PcycleRollStickAction) action error:(NSError *) error;
+
+-(void) pcycleSDK:(PcycleSDK *) pcycleSDK recieveError:(NSError *)error;
 
 @end
 

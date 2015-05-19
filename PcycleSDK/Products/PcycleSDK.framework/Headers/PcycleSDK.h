@@ -52,7 +52,7 @@ typedef NS_ENUM(NSInteger, PcycleRollStickAction) {
 /**
  *  进行初始化
  */
--(void) initWithDelegate:(id<PcycleSDKDelegate>) delegate;
+-(instancetype) initWithDelegate:(id<PcycleSDKDelegate>) delegate;
 
 
 /**

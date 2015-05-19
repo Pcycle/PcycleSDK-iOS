@@ -12,7 +12,7 @@
 
 @implementation PcycleSDK
 
--(void) initWithDelegate:(id<PcycleSDKDelegate>) delegate
+-(instancetype) initWithDelegate:(id<PcycleSDKDelegate>) delegate
 {
     _pcycleBluetooth = [[PcycleBluetooth alloc] init];
     
@@ -22,6 +22,8 @@
     
     _currentConnectDeviceUUID = nil;
     _resistance = 0;
+    
+    return self;
 }
 
 -(void) scanForPcycleDevices
