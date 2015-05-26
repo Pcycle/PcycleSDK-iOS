@@ -631,7 +631,7 @@
         }
     }
     
-    NSLog(@"PcycleBluetooth : Update Value %@", message);
+    //NSLog(@"PcycleBluetooth : Update Value %@", message);
 
     [_pcycleBluetoothDelegate pcycleBluetooth:self dataFromPeripheral:peripheral data:characteristic.value error:error];
 

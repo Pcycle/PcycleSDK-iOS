@@ -40,14 +40,7 @@ typedef NS_ENUM(NSInteger, PcycleRollStickAction) {
  *  @discussion PcycleSDK类，为整个SDK的顶层接口类，所有功能都由此类进行提供
  *
  */
-@interface PcycleSDK : NSObject<PcycleBluetoothDelegate>
-{
-    PcycleBluetooth *_pcycleBluetooth;
-    id<PcycleSDKDelegate> _pcycleSDKDelegate;
-    NSString *_currentConnectDeviceUUID;
-    float _resistance;
-    unsigned char _operationFlag;
-}
+@interface PcycleSDK : NSObject
 
 /**
  *  进行初始化
@@ -111,7 +104,7 @@ typedef NS_ENUM(NSInteger, PcycleRollStickAction) {
 @optional
 
 
--(void) pcycleSDK:(PcycleSDK *) pcycleSDK currentVelocity:(float) metersPerSecond error:(NSError *) error;
+-(void) pcycleSDK:(PcycleSDK *) pcycleSDK didRequestCurrentVelocity:(float) metersPerSecond error:(NSError *) error;
 
 -(void) pcycleSDK:(PcycleSDK *) pcycleSDK didRequestStepFreq:(float) cirlesPerMinute error:(NSError *) error;
 

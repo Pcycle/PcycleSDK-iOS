@@ -14,6 +14,7 @@
 
 NSTimer *timer;
 NSTimer *reTimer;
+BOOL flag = YES;
 
 int count = 0;
 
@@ -173,8 +174,17 @@ int circle[] = {0, 20, 40, 60, 80, 60, 40, 20};
 - (void)conReq
 {
 #if 1
-        [self conVelocityReq];
-        [_pcycleSDK requestStepFreq];
+    
+        if (flag == YES)
+        {
+            [self conVelocityReq];
+            flag = NO;
+        }
+        else
+        {
+            [_pcycleSDK requestStepFreq];
+            flag = YES;
+        }
     
 #else
     [self conVelocityReq];
@@ -237,13 +247,18 @@ int circle[] = {0, 20, 40, 60, 80, 60, 40, 20};
     [alert show];
 }
 
--(void) pcycleSDK:(PcycleSDK *)pcycleSDK currentVelocity:(float)metersPerSecond error:(NSError *)error
+-(void) pcycleSDK:(PcycleSDK *)pcycleSDK didRequestCurrentVelocity:(float)metersPerSecond error:(NSError *)error
 {
     if (error == nil)
     {
         int x = (int)metersPerSecond;
         float n = (metersPerSecond - x) * 10;
         int m = (int)n;
+        
+        NSString *tmp = [NSString stringWithFormat:@"%d.%d m/s", x, m];
+        
+        if (x > 0 || (x == 0 && m > 0))
+            NSLog(@"speed = %@", tmp);
         
         self.velocityLbl.text = [NSString stringWithFormat:@"%d.%d m/s", x, m];
     }
@@ -262,7 +277,12 @@ int circle[] = {0, 20, 40, 60, 80, 60, 40, 20};
         float n = (cirlesPerMinute - x) * 10;
         int m = (int)n;
         
-        self.stepFreqLbl.text = [NSString stringWithFormat:@"%d.%d c/m", x, m];
+        NSString *tmp = [NSString stringWithFormat:@"%d.%d c/m", x, m];
+        
+        if (x > 0 || (x == 0 && m > 0))
+            NSLog(@"freq  = %@", tmp);
+        
+        self.stepFreqLbl.text = tmp;
     }
     
 }

@@ -9,6 +9,17 @@
 #import "PcycleSDK.h"
 #import <Foundation/Foundation.h>
 
+@interface PcycleSDK() <PcycleBluetoothDelegate>
+{
+    PcycleBluetooth *_pcycleBluetooth;
+    id<PcycleSDKDelegate> _pcycleSDKDelegate;
+    NSString *_currentConnectDeviceUUID;
+    float _resistance;
+    unsigned char _operationFlag;
+}
+
+@end
+
 
 @implementation PcycleSDK
 
@@ -262,7 +273,7 @@
     
     const unsigned char *valueStr = (const unsigned char *)data.bytes;
     
-    NSLog(@"data = %2x", valueStr[0]);
+    //NSLog(@"data = %2x", valueStr[0]);
     
     switch (valueStr[0]) {
             
@@ -270,7 +281,7 @@
         case 0xA5:
             
             velocity = (float)valueStr[1] + valueStr[2] * 0.1;
-            [_pcycleSDKDelegate pcycleSDK:self currentVelocity:velocity error:error];
+            [_pcycleSDKDelegate pcycleSDK:self didRequestCurrentVelocity:velocity error:error];
             
             break;
             
