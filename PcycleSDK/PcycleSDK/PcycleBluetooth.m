@@ -401,6 +401,10 @@
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central
 {
     //_iOSBluetoothLELogString ([NSString stringWithFormat:@"Central State Update: %d", (int)central.state]);
+    if (_pcycleBluetoothDelegate != nil)
+    {
+        [_pcycleBluetoothDelegate pcycleBluetooth:self didCenterInit:central.state];
+    }
 }
 
 - (void)centralManager:(CBCentralManager *)central didRetrievePeripherals:(NSArray *)peripherals

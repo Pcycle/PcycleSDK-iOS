@@ -124,6 +124,8 @@ typedef NS_ENUM(NSInteger, PcycleRollStickAction) {
 
 -(void) pcycleSDK:(PcycleSDK *) pcycleSDK recieveError:(NSError *)error;
 
+-(void) pcycleSDK:(PcycleSDK *) pcycleSDK didInit:(CBCentralManagerState) state;
+
 @end
 
 

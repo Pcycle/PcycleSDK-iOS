@@ -334,6 +334,10 @@ int circle[] = {0, 20, 40, 60, 80, 60, 40, 20};
     self.btnStateLbl.text = [NSString stringWithFormat:@"Button %@", buttonIndex];
 }
 
+- (void)pcycleSDK:(PcycleSDK *)pcycleSDK didInit:(CBCentralManagerState)state
+{
+    NSLog(@"state = %ld", (long)state);
+}
 
 @end
 

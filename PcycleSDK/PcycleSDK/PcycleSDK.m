@@ -336,7 +336,15 @@
     }
 }
 
+-(void) pcycleBluetooth:(PcycleBluetooth *) pcycleBluetooth didCenterInit:(CBCentralManagerState)state
+{
+    if (_pcycleSDKDelegate != nil)
+    {
+        [_pcycleSDKDelegate pcycleSDK:self didInit:state];
+    }
+}
 
+#pragma mark - local
 -(unsigned char) calCheckSum:(const unsigned char*) data length:(int) length
 {
     unsigned char checkSum = 0;

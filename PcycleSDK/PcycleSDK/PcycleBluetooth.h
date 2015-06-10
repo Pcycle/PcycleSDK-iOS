@@ -69,7 +69,7 @@
 
 @protocol PcycleBluetoothDelegate <NSObject>
 
-@optional
+@required
 
 -(void) pcycleBluetooth:(PcycleBluetooth *) pcycleBluetooth didDiscoverPeripheral:(CBPeripheral *)peripheral UUID:(NSString *)uuid RSSI:(NSNumber *)RSSI;
 
@@ -80,6 +80,8 @@
 
 
 -(void) pcycleBluetooth:(PcycleBluetooth *) pcycleBluetooth didDisconnectPcycleDevice:(CBPeripheral *)peripheral error:(NSError *)error;
+
+-(void) pcycleBluetooth:(PcycleBluetooth *) pcycleBluetooth didCenterInit:(CBCentralManagerState)state;
 
 
 @end

@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>44686E63-E70F-4B2A-B2BC-2973D524E297</string>
 	<key>IDESourceControlProjectName</key>
-	<string>PcycleSDKDemo</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>AE46CF641675CE052E4F8DAAFFF66F92AF315396</key>
 		<string>https://github.com/Pcycle/PcycleSDK-iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>PcycleSDKDemo/PcycleSDKDemo.xcodeproj</string>
+	<string>PcycleSDKDemo/PcycleSDKDemo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>AE46CF641675CE052E4F8DAAFFF66F92AF315396</key>

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4889F4701B131FCF008FF086 /* PcycleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4889F46F1B131FCF008FF086 /* PcycleSDK.framework */; };
+		4858C8301B159BC200753646 /* PcycleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4858C82F1B159BC200753646 /* PcycleSDK.framework */; };
 		74A1EC1C1A81D49E00F2AA87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A1EC1B1A81D49E00F2AA87 /* main.m */; };
 		74A1EC1F1A81D49E00F2AA87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A1EC1E1A81D49E00F2AA87 /* AppDelegate.m */; };
 		74A1EC221A81D49E00F2AA87 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A1EC211A81D49E00F2AA87 /* ViewController.m */; };
@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4889F46F1B131FCF008FF086 /* PcycleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PcycleSDK.framework; sourceTree = "<group>"; };
+		4858C82F1B159BC200753646 /* PcycleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PcycleSDK.framework; sourceTree = "<group>"; };
 		74A1EC161A81D49E00F2AA87 /* PcycleSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PcycleSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A1EC1A1A81D49E00F2AA87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74A1EC1B1A81D49E00F2AA87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -35,7 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4889F4701B131FCF008FF086 /* PcycleSDK.framework in Frameworks */,
+				4858C8301B159BC200753646 /* PcycleSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,7 +68,7 @@
 				74A1EC231A81D49E00F2AA87 /* Main.storyboard */,
 				74A1EC261A81D49E00F2AA87 /* Images.xcassets */,
 				74A1EC281A81D49F00F2AA87 /* LaunchScreen.xib */,
-				4889F46F1B131FCF008FF086 /* PcycleSDK.framework */,
+				4858C82F1B159BC200753646 /* PcycleSDK.framework */,
 				74A1EC191A81D49E00F2AA87 /* Supporting Files */,
 			);
 			path = PcycleSDKDemo;
